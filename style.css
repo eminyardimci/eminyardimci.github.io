@@ -1,69 +1,177 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background: #0f172a;
-    color: #e5e7eb;
+/* =====================
+   GLOBAL
+===================== */
+* {
+    box-sizing: border-box;
 }
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+/* =====================
+   HEADER
+===================== */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 40px;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
 }
 
 h2 {
-    font-weight: normal;
-    color: #94a3b8;
+    font-size: 20px;
+    font-weight: 500;
+    color: #475569;
+    margin-bottom: 16px;
 }
 
-section {
-    max-width: 800px;
-    margin: auto;
-    margin-bottom: 40px;
+/* =====================
+   LINKS
+===================== */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #1e40af;
+}
+
+/* =====================
+   LANGUAGE SWITCH
+===================== */
+.lang-switch {
+    margin-top: 16px;
 }
 
 .lang-switch button {
-    margin: 5px;
-    padding: 6px 12px;
+    margin: 0 4px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #cbd5f5;
+    background: #ffffff;
+    color: #1e293b;
     cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease;
 }
+
+.lang-switch button:hover {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+section {
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+section h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-left: 4px solid #2563eb;
+    padding-left: 12px;
+}
+
+/* =====================
+   PROJECTS
+===================== */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
 }
 
 .project-card {
-    background: #020617;
-    border: 1px solid #1e293b;
-    padding: 20px;
-    border-radius: 12px;
-    transition: transform 0.2s;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
 
 .project-card h4 {
     margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
 }
 
 .project-card span {
+    display: inline-block;
     font-size: 12px;
-    color: #94a3b8;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 12px;
 }
 
+.project-card p {
+    font-size: 14px;
+    color: #334155;
+}
+
+/* =====================
+   SOCIAL LINKS
+===================== */
 .socials {
-    margin-top: 10px;
+    margin-top: 16px;
 }
 
 .socials a {
-    margin: 0 10px;
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: bold;
+    margin: 0 12px;
+    font-weight: 600;
+    color: #2563eb;
+    position: relative;
+}
+
+.socials a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.socials a:hover::after {
+    width: 100%;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
 }
