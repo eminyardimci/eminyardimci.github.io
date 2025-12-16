@@ -1,39 +1,62 @@
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  background: linear-gradient(180deg,#f8fafc,#f1f5f9);
-  color: #0f172a;
+  font-family: "Georgia", serif;
+  background: #fafafa;
+  color: #1e293b;
 }
 
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* CV HERO */
+.cv-hero {
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr;
+  gap: 40px;
   padding: 80px;
-  max-width: 800px;
+  min-height: 100vh;
 }
 
-.hero h1 { font-size: 48px; }
-.hero h2 { color: #475569; }
-.hero p { font-size: 18px; }
+/* FOTO */
+.cv-photo img {
+  width: 100%;
+  border-radius: 20px;
+}
 
-/* FLOATING BUTTON */
+/* METİNLER */
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 28px;
+  color: #475569;
+}
+
+p, li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+/* PROJELER BUTONU */
 .projects-btn {
   position: fixed;
   right: 30px;
   bottom: 30px;
-  padding: 14px 22px;
+  padding: 14px 24px;
+  border-radius: 30px;
+  border: none;
   background: #2563eb;
   color: white;
-  border: none;
-  border-radius: 30px;
+  font-size: 15px;
   cursor: pointer;
-  font-size: 16px;
 }
 
-/* PROJECT OVERLAY */
+/* OVERLAY */
 #projects-overlay {
   position: fixed;
   inset: 0;
@@ -43,7 +66,7 @@ body {
   justify-content: center;
 }
 
-/* DIAMOND GRID */
+/* BAKLAVA GRID */
 .diamond-grid {
   display: grid;
   grid-template-columns: repeat(3,120px);
@@ -66,33 +89,11 @@ body {
   background: #1e40af;
 }
 
-.diamond::after {
-  content: attr(data-title);
-}
-
-/* MODAL */
-#modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.6);
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  max-width: 700px;
-}
-
-.modal-content img {
-  width: 100%;
-  border-radius: 12px;
-}
-
 .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
   cursor: pointer;
-  font-size: 28px;
 }
