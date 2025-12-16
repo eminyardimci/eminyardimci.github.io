@@ -16,9 +16,16 @@ const content = {
 };
 
 function setLang(lang) {
+
+    // Üst başlıklar
     document.getElementById("title").innerText = content[lang].title;
     document.getElementById("about-title").innerText = content[lang].aboutTitle;
     document.getElementById("about-text").innerText = content[lang].aboutText;
     document.getElementById("projects-title").innerText = content[lang].projectsTitle;
     document.getElementById("contact-title").innerText = content[lang].contactTitle;
+
+    // PROJELER
+    document.getElementById("robotaksi-text").innerText = content[lang].robotaksi;
+    document.getElementById("tubitak-text").innerText = content[lang].tubitak;
+    document.getElementById("robotkol-text").innerText = content[lang].robotkol;
 }
