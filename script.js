@@ -68,7 +68,7 @@ const sections = {
     }
 };
 
-// ================= DOM ELEMANLARI =================
+// DOM Cache
 const els = {
     navLinks: document.querySelectorAll('.nav-link'),
     projectDetail: document.getElementById('project-detail'),
@@ -77,17 +77,23 @@ const els = {
     hakkimda: document.getElementById('hakkimda'),
     languageToggle: document.getElementById('language-toggle'),
     sidebar: document.querySelector('.sidebar'),
-    body: document.body,
+    content: document.querySelector('.content'),
     closeBtn: document.querySelector('.close-btn'),
-    projectsBtn: document.querySelector('.projects-btn')
+    projectsBtn: document.querySelector('.projects-btn'),
+    body: document.body
 };
 
-// ================= DURUM =================
+// Blur overlay oluştur (JS ile ekle ki dinamik olsun)
+const blurOverlay = document.createElement('div');
+blurOverlay.classList.add('blur-overlay');
+document.body.appendChild(blurOverlay);
+
+// State
 let currentLang = localStorage.getItem('lang') || 'tr';
 let currentSectionKey = null;
 let isTransitioning = false;
 
-// ================= EVENT LISTENERS =================
+// Events
 els.sidebar.addEventListener('click', (e) => {
     const link = e.target.closest('.nav-link');
     if (!link) return;
@@ -109,13 +115,13 @@ els.languageToggle.addEventListener('click', () => {
 els.closeBtn.addEventListener('click', closeSection);
 els.projectsBtn.addEventListener('click', toggleSidebar);
 
-// ================= SAYFA YÜKLENDİĞİNDE =================
+// Load
 window.addEventListener('load', () => {
     setLanguage(currentLang, false);
     document.querySelector('.nav-link[data-section="hakkimda"]').classList.add('active');
 });
 
-// ================= FONKSİYONLAR =================
+// Functions
 function setLanguage(lang, reRender = true) {
     if (lang === currentLang) return;
     currentLang = lang;
@@ -148,25 +154,26 @@ function showSection(key) {
         els.projectContent.innerHTML = `<h2>${section.title}</h2><p>${section.description}</p>`;
 
         els.projectDetail.classList.remove('hidden');
+        blurOverlay.classList.add('active');
+
         requestAnimationFrame(() => {
             els.projectDetail.classList.add('visible');
-            els.body.classList.add('project-open');
             scrollTo(els.projectDetail);
         });
     }
 
-    setTimeout(() => isTransitioning = false, 500);
+    setTimeout(() => isTransitioning = false, 600);
 }
 
 function closeProject() {
     els.projectDetail.classList.remove('visible');
-    els.body.classList.remove('project-open');
+    blurOverlay.classList.remove('active');
 
     setTimeout(() => {
         els.projectDetail.classList.add('hidden');
         els.projectYear.textContent = '';
         els.projectContent.innerHTML = '';
-    }, 400);
+    }, 600);
 }
 
 function closeSection() {
