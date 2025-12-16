@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <!-- Sidebar Navigation -->
     <nav class="sidebar">
         <ul>
             <li><a href="javascript:void(0);" class="nav-link" data-section="hakkimda" data-lang-key="about">HAKKIMDA</a></li>
@@ -23,9 +24,12 @@
         </ul>
     </nav>
 
+    <!-- Language Toggle -->
     <button id="language-toggle" class="language-toggle">EN</button>
 
+    <!-- Main Content -->
     <main class="content">
+        <!-- Hakkımda -->
         <section id="hakkimda" class="hero">
             <div class="hero-header">
                 <h1 data-lang-key="cvTitle">Özgeçmiş</h1>
@@ -35,6 +39,7 @@
             </div>
 
             <div class="columns">
+                <!-- Sol -->
                 <div class="col">
                     <h3 data-lang-key="profileTitle">Profil</h3>
                     <p data-lang-key="profileDesc">Elektronik kart tasarımı, gömülü sistem yazılımı ve otomasyon teknolojilerinde deneyimli; takım çalışmasına yatkın ve yenilikçi çözümler üretmeye odaklı bir mekatronik mühendisiyim.</p>
@@ -58,6 +63,7 @@
                     </ul>
                 </div>
 
+                <!-- Sağ -->
                 <div class="col">
                     <h3 data-lang-key="personalFeaturesTitle">Kişisel Özellikler</h3>
                     <ul>
@@ -97,6 +103,7 @@
             </div>
         </section>
 
+        <!-- Proje Detay Modal -->
         <section id="project-detail" class="project-section hidden">
             <div id="project-year" class="project-year"></div>
             <div id="project-content"></div>
@@ -104,6 +111,7 @@
         </section>
     </main>
 
+    <!-- Mobil Projeler Butonu -->
     <button class="projects-btn" data-lang-key="projects">Projeler</button>
 
     <script src="script.js"></script>
