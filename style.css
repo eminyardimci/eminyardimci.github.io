@@ -103,7 +103,7 @@ body.project-open {
 .col h3 {
     font-size: 18px;
     letter-spacing: 1.2px;
-    color: #2563eb;
+    color: #dc2626; /* Yeni renk: Kırmızı, sidebar'a uyumlu */
     margin-top: 0;
     margin-bottom: 12px;
     text-transform: uppercase;
@@ -140,13 +140,13 @@ ul {
 }
 
 .contact-links a:hover {
-    color: #2563eb;
+    color: #dc2626;
 }
 
 .contact-links i {
     font-size: 20px;
     width: 24px;
-    color: #2563eb;
+    color: #dc2626;
 }
 
 /* Project Section */
@@ -201,7 +201,7 @@ ul {
 
 .close-btn {
     padding: 12px 30px;
-    background: #2563eb;
+    background: #dc2626; /* Kapat butonu rengini de kırmızıya uydurdum */
     color: white;
     border: none;
     border-radius: 30px;
@@ -212,7 +212,7 @@ ul {
 }
 
 .close-btn:hover {
-    background: #1d4ed8;
+    background: #b91c1c;
 }
 
 .hidden {
@@ -227,11 +227,11 @@ ul {
     padding: 16px 30px;
     border-radius: 30px;
     border: none;
-    background: #2563eb;
+    background: #dc2626;
     color: white;
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 12px 30px rgba(37,99,235,0.35);
+    box-shadow: 0 12px 30px rgba(220,38,38,0.35);
     display: none;
     z-index: 20;
 }
@@ -242,7 +242,7 @@ ul {
     top: 20px;
     right: 20px;
     padding: 8px 16px;
-    background: #2563eb;
+    background: #dc2626;
     color: white;
     border: none;
     border-radius: 20px;
@@ -251,7 +251,7 @@ ul {
 }
 
 .language-toggle:hover {
-    background: #1d4ed8;
+    background: #b91c1c;
 }
 
 /* Responsive */
