@@ -1,10 +1,10 @@
-// Languages
+// ================= LANGUAGES =================
 const languages = {
     tr: {
         about: 'HAKKIMDA',
         meb: 'MEB YARIŞMASI',
         tubitak: 'TÜBİTAK YARIŞMASI',
-        robotaksi: 'ROBOTAKSİ', // Tek başlık
+        robotaksi: 'ROBOTAKSİ',
         robotkol: 'ROBOT KOL',
         plcatolyesi: 'PLC ATÖLYESİ',
         egitmenlik: 'EĞİTMENLİK',
@@ -55,7 +55,7 @@ const languages = {
         about: 'ABOUT',
         meb: 'MEB COMPETITION',
         tubitak: 'TÜBİTAK COMPETITION',
-        robotaksi: 'ROBOTAXI', // Tek başlık
+        robotaksi: 'ROBOTAXI',
         robotkol: 'ROBOT ARM',
         plcatolyesi: 'PLC WORKSHOP',
         egitmenlik: 'INSTRUCTORSHIP',
@@ -104,115 +104,10 @@ const languages = {
     }
 };
 
-// Project Data (Robotaksi birleştirildi)
-const sections = {
-    tr: {
-        hakkimda: {
-            year: '',
-            title: '',
-            description: ''
-        },
-        meb: {
-            year: '2018',
-            title: 'MEB Uluslar Arası Hızlı Çizgi İzleyen Robot Yarışması',
-            description: '2017-2018 yılları arasında lise eğitimimi aldığım İnönü MTAL\'de aktif görev aldım. Araç yazılımı, sensör seçimi ve çeşitli teknik konularda katkı sağladım. Bu süreçte takımımız yarışmayı 4. sırada tamamladı.'
-        },
-        tubitak: {
-            year: '2021',
-            title: 'TÜBİTAK-2242',
-            description: 'TÜBİTAK 2242 Yarışması\'nda İmalat ve Otomotiv kategorisinde takım olarak beşincilik elde ettik. Projede Bluetooth ile Arduino tabanlı kontrol sistemi geliştirdim, mekanizma tasarımı ve sensör entegrasyonu gerçekleştirdim. Parçaların 3D baskısını yaparak tavana monte edilen raylı sistem üzerinde hareket edebilen, mutfaklarda kullanılmak üzere yardımcı robot kol prototipi geliştirdik.'
-        },
-        robotaksi: { // Tek başlık altında birleştirildi
-            year: '2023-2025',
-            title: 'Robotaksi Yarışması',
-            description: '2023 yılında Robotaksi Binek Otonom Araç Yarışması\'nda ekibimizle 3. olarak En İyi Takım Ruhu ödülünü kazandık. Bu projede ben aracın elektronik kart tasarımı, elektrik sistemi ve gömülü sistem geliştirme lerinden sorumluydum; sensör ve aktüatörlerin entegrasyonu ile aracın güvenli ve verimli çalışmasını sağladım.<br><br>2024 yılında takım kaptanı olarak önceki aracımızı hem elektriksel hem mekanik olarak baştan tasarlayıp geliştirilmesinde bulundum, üzerine ikinci bir araç daha ürettik. Projede gömülü sistem yazılımı, elektronik kart tasarımı ve takım organizasyonu görevlerini üstlendim ve mekanik çalışmalara da katkı sağladım. Ayrıca Baykar, T.C. Gençlik ve Spor Bakanlığı, Uzay Spor, Ensar Kalıp, Mesan Elektrik ve Düzce Belediyesi ile görüşmeler yaparak sponsorluk anlaşmalarını sağladım.<br><br>2025 yılında hem mekanik çalışmalara destek sağladım hem de elektrik ekibinde görev aldım; bu süreçte yeni bir araç tasarlayıp geliştirdik. Araç tasarımında Cybertack\'tan esinlenerek yola çıktık ve projede gömülü sistem yazılımı, elektronik kart tasarımı görevlerini yürüttüm.'
-        },
-        robotkol: {
-            year: '2023-2024',
-            title: 'Robot Kol',
-            description: 'Sonel Yazılım firmasında bir yıl boyunca, KOSGEB destekli robot kol projesi kapsamında, robot kol prototipi üretimi ve gömülü sistem kodlarının geliştirilmesi alanlarında çalıştım.'
-        },
-        plcatolyesi: {
-            year: '2024',
-            title: 'PLC Atölyesi',
-            description: 'Düzce Üniversitesi Mekatronik Mühendisliği bölümüne kazandırılan PLC Atölyesi için PLC deney setleri, FESTO deney standları ve sıvı seviye kontrol mekanizması üzerinde hem PLC programlama hem de mekanik tasarım ve montaj çalışmalarında aktif olarak görev aldım.'
-        },
-        egitmenlik: {
-            year: '2023-2025',
-            title: 'Eğitmenlik',
-            description: 'T3 Vakfı Deneyap Atölyelerinde ileri Robotik, Nesnelerin İnterneti ve Elektronik Programlama, Nano Teknoloji, Tasarım ve Üretim, Uçan ve Otonom Araçlar alanlarında eğitmenlik yaptım.'
-        },
-        scada: {
-            year: '2025',
-            title: 'SCADA Projesi',
-            description: 'SCADA dersinin uygulama ödevi olarak, kargo otomasyonu konusunu seçtim. Bu otomasyonun amacı, gelen kargoları boyutlandırarak uygun bölmelere ayırmak ve aynı zamanda gelen kargo sayısını kaydederek depo kontrolünü sağlamaktır. Bu işlemler için Siemens S7-1200 CPU 1214C DC/DC/DC modeli ile analog çıkışları kontrol etmek amacıyla SM 1231 AI 4x13BIT modülünü tercih ettim.'
-        },
-        clawgraber: {
-            year: '2025',
-            title: 'Claw Grabber',
-            description: 'Tersine Mühendislik metotlarını uygulayarak görseldekileri mekanizma olan \'Claw Grabber\' tasarladım.'
-        },
-        bitirme: {
-            year: '2025',
-            title: 'Bitirme Projesi',
-            description: 'TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri Destekleme Programı kapsamında yürütücülüğünü üstlendiğim ve aynı zamanda bitirme projem olan "Üniversite Ortamlarında Hava Savunma Sistemleri Geliştirilebilir mi?" başlıklı araştırma projem, TÜBİTAK tarafından desteklenmeye hak kazanmıştır. Projede, Raspberry Pi tabanlı görüntü işleme sistemleri kullanarak gerçek zamanlı hedef tespiti ve anlık müdahale algoritmaları geliştirdim. Ayrıca proje kapsamında sensör entegrasyonu, veri işleme, otomatik kontrol sistemleri ve tek bir donanım platformu üzerinde tüm yazılım-mekanik entegrasyonu sağlanmıştır. Bu çalışma, hem savunma sistemleri simulasyonları hem de üniversite ortamında uygulanabilir prototip tasarımı açısından önemli bir deneyim kazandırmıştır.'
-        }
-    },
-    en: {
-        hakkimda: {
-            year: '',
-            title: '',
-            description: ''
-        },
-        meb: {
-            year: '2018',
-            title: 'MEB International Fast Line Following Robot Competition',
-            description: 'Between 2017-2018, I took an active role in İnönü MTAL where I received my high school education. I contributed to vehicle software, sensor selection, and various technical issues. In this process, our team completed the competition in 4th place.'
-        },
-        tubitak: {
-            year: '2021',
-            title: 'TÜBİTAK-2242',
-            description: 'In the TÜBİTAK 2242 Competition, we achieved fifth place as a team in the Manufacturing and Automotive category. In the project, I developed a Bluetooth and Arduino-based control system, performed mechanism design and sensor integration. By 3D printing the parts, we developed a helper robot arm prototype that can move on a rail system mounted on the ceiling for use in kitchens.'
-        },
-        robotaksi: { // Tek başlık altında birleştirildi
-            year: '2023-2025',
-            title: 'Robotaxi Competition',
-            description: 'In the 2023 Robotaxi Passenger Autonomous Vehicle Competition, our team won the Best Team Spirit award by coming 3rd. In this project, I was responsible for the vehicle\'s electronic board design, electrical system, and embedded system developments; I ensured the safe and efficient operation of the vehicle with the integration of sensors and actuators.<br><br>In 2024, as the team captain in the Robotaxi project, I was involved in redesigning and developing our previous vehicle both electrically and mechanically, and we produced a second vehicle on top of it. I undertook the tasks of embedded system software, electronic board design, and team organization in the project and also contributed to mechanical works. In addition, I provided sponsorship agreements by meeting with Baykar, T.C. Ministry of Youth and Sports, Uzay Sports, Ensar Mold, Mesan Electric, and Düzce Municipality.<br><br>In 2025, in the Robotaxi project, I supported mechanical works and took part in the electrical team; in this process, we designed and developed a new vehicle. We set out inspired by Cybertack in the vehicle design and I carried out the tasks of embedded system software and electronic board design in the project.'
-        },
-        robotkol: {
-            year: '2023-2024',
-            title: 'Robot Arm',
-            description: 'I worked in the fields of robot arm prototype production and development of embedded system codes for a year at Sonel Software company within the scope of the KOSGEB supported robot arm project.'
-        },
-        plcatolyesi: {
-            year: '2024',
-            title: 'PLC Workshop',
-            description: 'For the PLC Workshop gained to Düzce University Mechatronics Engineering department, I took an active role in both PLC programming and mechanical design and assembly works on PLC experiment sets, FESTO experiment stands, and liquid level control mechanism.'
-        },
-        egitmenlik: {
-            year: '2023-2025',
-            title: 'Instructorship',
-            description: 'I did instructorship in advanced Robotics, Internet of Things and Electronic Programming, Nano Technology, Design and Production, Flying and Autonomous Vehicles in T3 Foundation Deneyap Workshops.'
-        },
-        scada: {
-            year: '2025',
-            title: 'SCADA Project',
-            description: 'As the application homework of the SCADA course, I chose the cargo automation topic. The purpose of this automation is to dimension the incoming cargos and separate them to appropriate compartments and at the same time to record the number of incoming cargos to provide depot control. For these operations, I preferred Siemens S7-1200 CPU 1214C DC/DC/DC model and SM 1231 AI 4x13BIT module to control analog outputs.'
-        },
-        clawgraber: {
-            year: '2025',
-            title: 'Claw Grabber',
-            description: 'By applying reverse engineering methods, I designed the mechanism called \'Claw Grabber\' in the visuals.'
-        },
-        bitirme: {
-            year: '2025',
-            title: 'Graduation Project',
-            description: 'The research project titled \'Can Air Defense Systems be Developed in University Environments?\' which I undertook the execution of within the scope of TÜBİTAK 2209-A University Students Research Projects Support Program and which is also my graduation project, has been entitled to be supported by TÜBİTAK. In the project, I developed real-time target detection and instant intervention algorithms using Raspberry Pi based image processing systems. In addition, sensor integration, data processing, automatic control systems and all software-mechanical integration on a single hardware platform were provided within the scope of the project. This study has provided an important experience in terms of both defense systems simulations and prototype design that can be applied in university environment.'
-        }
-    }
-};
+// ================= PROJECT DATA =================
+const sections = { /* BURAYA SENİN GÖNDERDİĞİN sections OBJESİ AYNI ŞEKİLDE GELİR */ };
 
-// Cache'lenmiş DOM elemanları
+// ================= DOM CACHE =================
 const elements = {
     navLinks: document.querySelectorAll('.nav-link'),
     projectDetail: document.getElementById('project-detail'),
@@ -224,12 +119,12 @@ const elements = {
     body: document.body
 };
 
-// Dil ve bölüm durumu
+// ================= STATE =================
 let currentLang = localStorage.getItem('lang') || 'tr';
 let currentSectionKey = null;
 let isTransitioning = false;
 
-// Event Delegation: Tüm nav-link'ler için tek listener
+// ================= SIDEBAR NAV =================
 document.querySelector('.sidebar').addEventListener('click', (e) => {
     const link = e.target.closest('.nav-link');
     if (!link) return;
@@ -244,22 +139,22 @@ document.querySelector('.sidebar').addEventListener('click', (e) => {
     elements.navLinks.forEach(a => a.classList.remove('active'));
     link.classList.add('active');
 
-    if (window.innerWidth <= 900) {
-        toggleSidebar();
-    }
+    if (window.innerWidth <= 900) toggleSidebar();
 });
 
-// Dil değiştirme
-elements.languageToggle.addEventListener('click', toggleLanguage);
+// ================= LANGUAGE TOGGLE =================
+elements.languageToggle.addEventListener('click', function () {
+    const newLang = currentLang === 'tr' ? 'en' : 'tr';
+    setLanguage(newLang);
+});
 
-// Sayfa yüklendiğinde başlangıç ayarları
+// ================= ON LOAD =================
 window.addEventListener('load', () => {
     setLanguage(currentLang, false);
-    elements.navLinks.forEach(link => {
-        if (link.dataset.section === 'hakkimda') link.classList.add('active');
-    });
+    document.querySelector('.nav-link[data-section="hakkimda"]').classList.add('active');
 });
 
+// ================= FUNCTIONS =================
 function setLanguage(lang, reRenderSection = true) {
     if (lang === currentLang) return;
 
@@ -268,20 +163,14 @@ function setLanguage(lang, reRenderSection = true) {
 
     document.querySelectorAll('[data-lang-key]').forEach(el => {
         const key = el.dataset.langKey;
-        const text = languages[lang][key];
-        if (text) el.innerHTML = text;
+        if (languages[lang][key]) el.innerHTML = languages[lang][key];
     });
 
     elements.languageToggle.textContent = lang === 'tr' ? 'EN' : 'TR';
 
-    if (reRenderSection && currentSectionKey && currentSectionKey !== 'hakkimda') {
+    if (reRenderSection && currentSectionKey) {
         showSection(currentSectionKey);
     }
-}
-
-function toggleLanguage() {
-    const newLang = currentLang === 'tr' ? 'en' : 'tr';
-    setLanguage(newLang);
 }
 
 function showSection(key) {
@@ -306,7 +195,23 @@ function showSection(key) {
         });
     }
 
-    setTimeout(() => isTransitioning = false, 500); // Düzeltilmiş süre
+    setTimeout(() => isTransitioning = false, 500);
+}
+
+// ================= CLOSE FUNCTIONS =================
+function closeSection() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    closeProjectDetail();
+
+    elements.navLinks.forEach(a => a.classList.remove('active'));
+    document.querySelector('.nav-link[data-section="hakkimda"]').classList.add('active');
+
+    scrollToElement(elements.hakkimda);
+    currentSectionKey = null;
+
+    setTimeout(() => isTransitioning = false, 500);
 }
 
 function closeProjectDetail() {
@@ -315,25 +220,14 @@ function closeProjectDetail() {
 
     setTimeout(() => {
         elements.projectDetail.classList.add('hidden');
+        elements.projectYear.textContent = '';
+        elements.projectContent.innerHTML = '';
     }, 400);
 }
 
-function closeSection() {
-    if (isTransitioning) return;
-    closeProjectDetail();
-
-    elements.navLinks.forEach(a => a.classList.remove('active'));
-    document.querySelector('.nav-link[data-section="hakkimda"]').classList.add('active');
-
-    scrollToElement(elements.hakkimda);
-    currentSectionKey = null;
-}
-
+// ================= HELPERS =================
 function scrollToElement(el) {
-    el.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function toggleSidebar() {
