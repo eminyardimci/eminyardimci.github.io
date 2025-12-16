@@ -68,7 +68,6 @@ const sections = {
     }
 };
 
-// DOM Cache
 const els = {
     navLinks: document.querySelectorAll('.nav-link'),
     projectDetail: document.getElementById('project-detail'),
@@ -77,23 +76,20 @@ const els = {
     hakkimda: document.getElementById('hakkimda'),
     languageToggle: document.getElementById('language-toggle'),
     sidebar: document.querySelector('.sidebar'),
-    content: document.querySelector('.content'),
     closeBtn: document.querySelector('.close-btn'),
     projectsBtn: document.querySelector('.projects-btn'),
     body: document.body
 };
 
-// Blur overlay oluştur (JS ile ekle ki dinamik olsun)
+// Blur overlay'ı JS ile ekle
 const blurOverlay = document.createElement('div');
 blurOverlay.classList.add('blur-overlay');
 document.body.appendChild(blurOverlay);
 
-// State
 let currentLang = localStorage.getItem('lang') || 'tr';
 let currentSectionKey = null;
 let isTransitioning = false;
 
-// Events
 els.sidebar.addEventListener('click', (e) => {
     const link = e.target.closest('.nav-link');
     if (!link) return;
@@ -115,13 +111,11 @@ els.languageToggle.addEventListener('click', () => {
 els.closeBtn.addEventListener('click', closeSection);
 els.projectsBtn.addEventListener('click', toggleSidebar);
 
-// Load
 window.addEventListener('load', () => {
     setLanguage(currentLang, false);
     document.querySelector('.nav-link[data-section="hakkimda"]').classList.add('active');
 });
 
-// Functions
 function setLanguage(lang, reRender = true) {
     if (lang === currentLang) return;
     currentLang = lang;
@@ -134,9 +128,7 @@ function setLanguage(lang, reRender = true) {
 
     els.languageToggle.textContent = lang === 'tr' ? 'EN' : 'TR';
 
-    if (reRender && currentSectionKey && currentSectionKey !== 'hakkimda') {
-        showSection(currentSectionKey);
-    }
+    if (reRender && currentSectionKey && currentSectionKey !== 'hakkimda') showSection(currentSectionKey);
 }
 
 function showSection(key) {
@@ -179,10 +171,8 @@ function closeProject() {
 function closeSection() {
     if (isTransitioning) return;
     closeProject();
-
     els.navLinks.forEach(a => a.classList.remove('active'));
     document.querySelector('.nav-link[data-section="hakkimda"]').classList.add('active');
-
     scrollTo(els.hakkimda);
     currentSectionKey = null;
 }
