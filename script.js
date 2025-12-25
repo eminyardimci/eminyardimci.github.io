@@ -146,7 +146,7 @@ function toggleDarkMode() {
     }
 }
 
-function setLanguage(lang, reRender = true) {
+/*function setLanguage(lang, reRender = true) {
     if (lang === currentLang) return;
     currentLang = lang;
     localStorage.setItem('lang', lang);
@@ -159,6 +159,31 @@ function setLanguage(lang, reRender = true) {
     const cvBtn = document.getElementById('cv-download');
     if (cvBtn) {
         cvBtn.href = lang === 'tr' ? 'assets/projects/Mehmet Emin Yardımcı_CV.pdf' : 'assets/projects/Mehmet Emin Yardımcı_CV_EN.pdf';
+    }
+
+    if (currentSectionKey && currentSectionKey !== 'hakkimda') {
+        showSection(currentSectionKey);
+    }
+}*/
+
+function setLanguage(lang, reRender = true) {
+    if (lang === currentLang) return;
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('[data-lang-key]').forEach(el => {
+        const key = el.dataset.langKey;
+        if (languages[lang][key]) el.innerHTML = languages[lang][key];
+    });
+    els.languageToggle.textContent = lang === 'tr' ? 'EN' : 'TR';
+
+    // CV linkini güncelle
+    const cvBtn = document.getElementById('cv-download');
+    if (cvBtn) {
+        if (lang === 'tr') {
+            cvBtn.href = 'assets/projects/Mehmet Emin Yardımcı_CV.pdf';
+        } else {
+            cvBtn.href = 'assets/projects/Mehmet Emin Yardımcı_CV_EN.pdf';
+        }
     }
 
     if (currentSectionKey && currentSectionKey !== 'hakkimda') {
