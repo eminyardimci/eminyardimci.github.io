@@ -35,7 +35,7 @@ body.dark-mode .contact-links a:hover {
 body.dark-mode .col h3 {
     color: #dc2626;
 }
-/* Blur Overlay – Yumuşak ve mobil dostu */
+/* Blur Overlay */
 .blur-overlay {
     position: fixed;
     inset: 0;
@@ -67,12 +67,8 @@ body.dark-mode .col h3 {
     transition: transform 0.3s ease;
     z-index: 10;
 }
-.sidebar ul {
-    list-style: none;
-}
-.sidebar li {
-    margin-bottom: 20px;
-}
+.sidebar ul { list-style: none; }
+.sidebar li { margin-bottom: 20px; }
 .sidebar a {
     color: white;
     text-decoration: none;
@@ -81,8 +77,7 @@ body.dark-mode .col h3 {
     font-weight: 500;
     display: block;
 }
-.sidebar a:hover,
-.sidebar a.active {
+.sidebar a:hover, .sidebar a.active {
     font-weight: bold;
     text-decoration: underline;
 }
@@ -93,18 +88,9 @@ body.dark-mode .col h3 {
     width: calc(100% - 250px);
 }
 /* Hero */
-.hero {
-    max-width: 1200px;
-    margin: 0 auto 80px;
-}
-.hero-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-.hero-header h1 {
-    font-size: 60px;
-    margin-bottom: 20px;
-}
+.hero { max-width: 1200px; margin: 0 auto 80px; }
+.hero-header { text-align: center; margin-bottom: 40px; }
+.hero-header h1 { font-size: 60px; margin-bottom: 20px; }
 .photo {
     width: 300px;
     margin: 0 auto;
@@ -112,16 +98,8 @@ body.dark-mode .col h3 {
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
-.photo img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-}
+.photo img { width: 100%; height: auto; display: block; }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
 .col h3 {
     font-size: 18px;
     letter-spacing: 1.2px;
@@ -129,21 +107,11 @@ body.dark-mode .col h3 {
     margin-bottom: 12px;
     text-transform: uppercase;
 }
-.col p, .col li {
-    font-size: 16px;
-    line-height: 1.8;
-}
-ul {
-    padding-left: 20px;
-    margin: 10px 0 30px;
-}
+.col p, .col li { font-size: 16px; line-height: 1.8; }
+ul { padding-left: 20px; margin: 10px 0 30px; }
 /* Contact Links */
-.contact-links {
-    list-style: none;
-}
-.contact-links li {
-    margin-bottom: 12px;
-}
+.contact-links { list-style: none; }
+.contact-links li { margin-bottom: 12px; }
 .contact-links a {
     color: #1e293b;
     text-decoration: none;
@@ -153,20 +121,14 @@ ul {
     gap: 10px;
     transition: color 0.3s;
 }
-.contact-links a:hover {
-    color: #dc2626;
-}
-.contact-links i {
-    font-size: 20px;
-    width: 24px;
-    color: #dc2626;
-}
-/* Project Section – Yıl tamamen içeride, taşma yok, orantılı fontlar */
+.contact-links a:hover { color: #dc2626; }
+.contact-links i { font-size: 20px; width: 24px; color: #dc2626; }
+/* Project Section */
 .project-section {
     max-width: 900px;
     width: 90%;
     max-height: 85vh;
-    padding: 60px 40px; /* Üst boşluk güvenli, taşma yok */
+    padding: 60px 40px;
     background: white;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
@@ -180,35 +142,23 @@ ul {
     visibility: hidden;
     transition: opacity 0.6s ease, visibility 0.6s ease;
 }
-.project-section.visible {
-    opacity: 1;
-    visibility: visible;
-}
-/* Yıl – İçeride, taşmasız, orantılı ve dengeli font */
+.project-section.visible { opacity: 1; visibility: visible; }
 .project-year {
-    position: static; /* Taşma tamamen yok */
-    font-size: clamp(40px, 5vw, 65px); /* Daha küçük ve orantılı */
+    font-size: clamp(40px, 5vw, 65px);
     font-weight: bold;
     color: #dc2626;
     margin-bottom: 20px;
     line-height: 1;
     text-align: left;
-    background: transparent;
-    padding: 0;
 }
-.project-section h2 {
-    font-size: clamp(36px, 5vw, 46px); /* Başlık dengeli */
-    margin-bottom: 30px;
-    color: #1e293b;
-}
-.project-section p {
-    font-size: clamp(16px, 2.5vw, 18px); /* Metin okunaklı */
-    line-height: 1.8;
-    max-width: 900px;
-}
-/* Yeni Images Button – Yaratıcı ve görünür versiyon */
+.project-section h2 { font-size: clamp(36px, 5vw, 46px); margin-bottom: 30px; color: #1e293b; }
+.project-section p { font-size: clamp(16px, 2.5vw, 18px); line-height: 1.8; max-width: 900px; }
+/* Images Button */
 .images-button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     margin: 20px auto 10px;
     padding: 10px 20px;
     background: #dc2626;
@@ -218,10 +168,6 @@ ul {
     cursor: pointer;
     font-size: 16px;
     transition: background 0.3s, transform 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
 }
 .images-button:hover {
     background: #b91c1c;
@@ -231,9 +177,7 @@ body.dark-mode .images-button {
     background: #ffcc00;
     color: #1e293b;
 }
-body.dark-mode .images-button:hover {
-    background: #ffd633;
-}
+body.dark-mode .images-button:hover { background: #ffd633; }
 /* Gallery Section */
 .gallery-section {
     max-width: 900px;
@@ -253,16 +197,8 @@ body.dark-mode .images-button:hover {
     visibility: hidden;
     transition: opacity 0.6s ease, visibility 0.6s ease;
 }
-.gallery-section.visible {
-    opacity: 1;
-    visibility: visible;
-}
-#gallery-carousel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+.gallery-section.visible { opacity: 1; visibility: visible; }
+#gallery-carousel { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
 #gallery-carousel img {
     max-width: 300px;
     height: auto;
@@ -281,12 +217,8 @@ body.dark-mode .images-button:hover {
     font-size: 16px;
     transition: background 0.3s;
 }
-.close-btn:hover {
-    background: #b91c1c;
-}
-.hidden {
-    display: none;
-}
+.close-btn:hover { background: #b91c1c; }
+.hidden { display: none; }
 /* Buttons */
 .projects-btn, .language-toggle, .dark-mode-toggle {
     padding: 12px 24px;
@@ -298,9 +230,7 @@ body.dark-mode .images-button:hover {
     font-size: 16px;
     transition: background 0.3s;
 }
-.projects-btn:hover, .language-toggle:hover, .dark-mode-toggle:hover {
-    background: #b91c1c;
-}
+.projects-btn:hover, .language-toggle:hover, .dark-mode-toggle:hover { background: #b91c1c; }
 .projects-btn {
     position: fixed;
     right: 40px;
@@ -325,67 +255,20 @@ body.dark-mode .dark-mode-toggle {
     background: #ffcc00;
     color: #1e293b;
 }
-/* Responsive – Mobilde de taşmasız ve orantılı */
+/* Responsive */
 @media (max-width: 900px) {
-    .blur-overlay {
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-    }
-    .sidebar {
-        transform: translateX(-100%);
-        padding-top: 100px;
-    }
-    .sidebar.active {
-        transform: translateX(0);
-    }
-    .content {
-        margin-left: 0;
-        width: 100%;
-        padding: 40px 20px;
-    }
-    .hero-header h1 {
-        font-size: 48px;
-    }
-    .photo {
-        width: 250px;
-    }
-    .columns {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    .projects-btn {
-        display: block;
-    }
-    .project-section {
-        width: 95%;
-        padding: 50px 20px;
-        max-height: 90vh;
-    }
-    .gallery-section {
-        width: 95%;
-        padding: 50px 20px;
-        max-height: 90vh;
-    }
-    .project-year {
-        font-size: clamp(40px, 8vw, 60px); /* Mobilde daha küçük */
-        margin-bottom: 15px;
-    }
-    .project-section h2 {
-        font-size: clamp(30px, 7vw, 38px);
-    }
-    .project-section p {
-        font-size: clamp(15px, 4vw, 17px);
-    }
-    .language-toggle {
-        top: 10px;
-        right: 10px;
-    }
-    .dark-mode-toggle {
-        top: 10px;
-        right: 80px;
-    }
-    .images-button {
-        font-size: 14px; /* Mobilde küçült */
-        padding: 8px 16px;
-    }
+    .sidebar { transform: translateX(-100%); padding-top: 100px; }
+    .sidebar.active { transform: translateX(0); }
+    .content { margin-left: 0; width: 100%; padding: 40px 20px; }
+    .hero-header h1 { font-size: 48px; }
+    .photo { width: 250px; }
+    .columns { grid-template-columns: 1fr; gap: 50px; }
+    .projects-btn { display: block; }
+    .project-section, .gallery-section { width: 95%; padding: 50px 20px; max-height: 90vh; }
+    .project-year { font-size: clamp(40px, 8vw, 60px); margin-bottom: 15px; }
+    .project-section h2 { font-size: clamp(30px, 7vw, 38px); }
+    .project-section p { font-size: clamp(15px, 4vw, 17px); }
+    .language-toggle { top: 10px; right: 10px; }
+    .dark-mode-toggle { top: 10px; right: 80px; }
+    .images-button { font-size: 14px; padding: 8px 16px; }
 }
