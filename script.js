@@ -79,11 +79,12 @@ const els = {
     languageToggle: document.getElementById('language-toggle'),
     darkModeToggle: document.getElementById('dark-mode-toggle'),
     sidebar: document.querySelector('.sidebar'),
-    closeBtn: document.querySelector('.close-btn'),
+    projectCloseBtn: document.getElementById('project-close-btn'),
     projectsBtn: document.querySelector('.projects-btn'),
     imagesButton: document.getElementById('images-button'),
     galleryModal: document.getElementById('gallery-modal'),
     galleryCarousel: document.getElementById('gallery-carousel'),
+    galleryCloseBtn: document.getElementById('gallery-close-btn'),
     body: document.body
 };
 // Blur overlay'ı JS ile ekle
@@ -108,7 +109,8 @@ els.languageToggle.addEventListener('click', () => {
     const newLang = currentLang === 'tr' ? 'en' : 'tr';
     setLanguage(newLang);
 });
-els.closeBtn.addEventListener('click', closeSection);
+els.projectCloseBtn.addEventListener('click', closeSection);
+els.galleryCloseBtn.addEventListener('click', closeGallery);
 els.projectsBtn.addEventListener('click', toggleSidebar);
 els.darkModeToggle.addEventListener('click', toggleDarkMode);
 window.addEventListener('load', () => {
