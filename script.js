@@ -101,7 +101,7 @@ const sections = {
             year: '2025', 
             title: 'Claw Grabber', 
             description: 'Mevcut görsel ve referans tasarımlar incelenerek tersine mühendislik metotları uygulanmış, bu doğrultuda mekanik yapıya sahip bir Claw Grabber mekanizması tasarlanmıştır.', 
-            images: ['assets/projects/claw.png'] 
+            images: ['assets/projects/claw.jpg'] 
         },
         bitirme: { 
             year: '2025', 
