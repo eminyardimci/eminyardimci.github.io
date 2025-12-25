@@ -280,6 +280,9 @@ function openGallery(images) {
 
 function closeGallery() {
     els.galleryModal.classList.remove('visible');
+    document.querySelectorAll('#gallery-carousel img').forEach(i => {
+        i.classList.remove('zoomed');
+    });
     setTimeout(() => {
         els.galleryModal.classList.add('hidden');
         els.galleryCarousel.innerHTML = '';
