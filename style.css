@@ -100,13 +100,13 @@ body.dark-mode .col h3 {
     margin-left: 250px;
     padding: 40px 20px;
     width: calc(100% - 250px);
-    max-width: none; /* Kaldırdım, sınırsız genişlik */
     display: flex;
-    justify-content: center; /* İçeriği ortala */
+    justify-content: center;
+    align-items: flex-start;
 }
 .hero {
-    max-width: 1200px;
     width: 100%;
+    max-width: 1300px;
     margin: 0 auto;
 }
 .hero-header {
@@ -134,10 +134,12 @@ body.dark-mode .col h3 {
     font-size: 18px;
     margin-top: 20px;
     transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(220,38,38,0.3);
 }
 .cv-download-btn:hover {
     background: #b91c1c;
     transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(220,38,38,0.4);
 }
 .photo {
     width: 300px;
@@ -163,11 +165,10 @@ body.dark-mode .photo {
 }
 .columns {
     display: grid;
-    grid-template-columns: repeat(2, minmax(400px, 550px)); /* Daha dengeli sütunlar */
+    grid-template-columns: repeat(2, 1fr);
     gap: 80px;
-    justify-content: center; /* Grid'i ortala */
-    align-items: start;
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .col h3 {
     font-size: 20px;
@@ -365,14 +366,18 @@ body.dark-mode .dark-mode-toggle i {
     color: #1e293b;
 }
 @media (max-width: 900px) {
-.content {
+    .content {
         margin-left: 0;
         padding: 30px 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .hero {
+        max-width: 100%;
     }
     .columns {
         grid-template-columns: 1fr;
         gap: 50px;
-        justify-content: center;
     }
     .profession-title {
         font-size: 28px;
