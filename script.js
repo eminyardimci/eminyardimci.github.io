@@ -18,7 +18,8 @@ const languages = {
         stm32: 'STM32', freertos: 'FreeRTOS', altium: 'Altium PCB', cProg: 'C Programlama',
         welding: 'Gaz Altı Kaynak (Magwell)', close: 'Kapat', projects: 'Projeler',
         university: '<strong>Düzce Üniversitesi</strong><br>Mekatronik Mühendisliği<br>2021 – 2025 | GNO: 3.38',
-        galleryTitle: 'Proje Resimleri'
+        galleryTitle: 'Proje Resimleri',
+        viewImages: '<i class="fas fa-images"></i> Resimleri Gör'
     },
     en: {
         about: 'ABOUT', meb: 'INTERNATIONAL MEB ROBOT COMPETITION', tubitak: 'TÜBİTAK 2242', robotaksi: 'ROBOTAXI PASSENGER AUTONOMOUS VEHICLE COMPETITION',
@@ -38,7 +39,8 @@ const languages = {
         stm32: 'STM32', freertos: 'FreeRTOS', altium: 'Altium PCB', cProg: 'C Programming',
         welding: 'Gas Metal Arc Welding (Magwell)', close: 'Close', projects: 'Projects',
         university: '<strong>Düzce University</strong><br>Mechatronics Engineering<br>2021 – 2025 | GPA: 3.38',
-        galleryTitle: 'Project Images'
+        galleryTitle: 'Project Images',
+        viewImages: '<i class="fas fa-images"></i> View Images'
     }
 };
 // ================= PROJE VERİLERİ =================
@@ -79,7 +81,7 @@ const els = {
     sidebar: document.querySelector('.sidebar'),
     closeBtn: document.querySelector('.close-btn'),
     projectsBtn: document.querySelector('.projects-btn'),
-    imagesArrow: document.getElementById('images-arrow'),
+    imagesButton: document.getElementById('images-button'),
     galleryModal: document.getElementById('gallery-modal'),
     galleryCarousel: document.getElementById('gallery-carousel'),
     body: document.body
@@ -127,8 +129,6 @@ function setLanguage(lang, reRender = true) {
         if (languages[lang][key]) el.innerHTML = languages[lang][key];
     });
     els.languageToggle.textContent = lang === 'tr' ? 'EN' : 'TR';
-    // Images button title'ı güncelle (yaratıcı tooltip için)
-    els.imagesArrow.title = lang === 'tr' ? 'Resimler' : 'Images';
     // Her zaman açık modal'ı yeniden render et (sorunu çözer)
     if (currentSectionKey && currentSectionKey !== 'hakkimda') {
         console.log('Açık proje yeniden render ediliyor: ' + currentSectionKey); // Test log
@@ -152,8 +152,8 @@ function showSection(key) {
             els.projectDetail.classList.add('visible');
             scrollTo(els.projectDetail);
         });
-        // Resim oku eventi
-        els.imagesArrow.onclick = () => openGallery(section.images);
+        // Resim buton eventi
+        els.imagesButton.onclick = () => openGallery(section.images);
     }
     setTimeout(() => isTransitioning = false, 600);
 }
