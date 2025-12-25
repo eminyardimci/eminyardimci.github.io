@@ -118,11 +118,31 @@ body.dark-mode .col h3 {
     margin-bottom: 20px;
     color: #dc2626;
 }
+.name-title {
+    font-size: 42px;
+    font-weight: bold;
+    color: #1e293b;
+    margin: 30px 0 10px;
+    text-align: center;
+}
 .profession-title {
     font-size: 36px;
     font-weight: bold;
     color: #dc2626;
-    margin: 20px 0 30px;
+    margin: 0 0 30px;
+    text-align: center;
+}
+body.dark-mode .name-title {
+    color: #f9fafb;
+}
+.name-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #dc2626;
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 .cv-download-btn {
     display: inline-block;
@@ -132,7 +152,6 @@ body.dark-mode .col h3 {
     text-decoration: none;
     border-radius: 30px;
     font-size: 18px;
-    margin-top: 20px;
     transition: all 0.3s;
     box-shadow: 0 4px 15px rgba(220,38,38,0.3);
 }
@@ -353,6 +372,10 @@ body.dark-mode .images-button {
 .dark-mode-toggle i {
     pointer-events: none;
     color: white;
+    font-size: 24px;
+}
+body.dark-mode .dark-mode-toggle i {
+    color: #1e293b;
 }
 body.dark-mode .language-toggle,
 body.dark-mode .dark-mode-toggle,
@@ -360,9 +383,6 @@ body.dark-mode .projects-btn {
     background: #ffcc00;
 }
 body.dark-mode .language-toggle {
-    color: #1e293b;
-}
-body.dark-mode .dark-mode-toggle i {
     color: #1e293b;
 }
 @media (max-width: 900px) {
@@ -379,8 +399,11 @@ body.dark-mode .dark-mode-toggle i {
         grid-template-columns: 1fr;
         gap: 50px;
     }
+    .name-title {
+        font-size: 36px;
+    }
     .profession-title {
-        font-size: 28px;
+        font-size: 30px;
     }
     .cv-download-btn {
         font-size: 16px;
