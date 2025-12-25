@@ -207,6 +207,15 @@ function setLanguage(lang, reRender = true) {
         if (languages[lang][key]) el.innerHTML = languages[lang][key];
     });
     els.languageToggle.textContent = lang === 'tr' ? 'EN' : 'TR';
+
+    // CV indirme linki güncelle
+    const cvBtn = document.getElementById('cv-download');
+    if (lang === 'tr') {
+        cvBtn.href = 'assets/projects/Mehmet Emin Yardımcı_CV.pdf';
+    } else {
+        cvBtn.href = 'assets/projects/Mehmet Emin Yardımcı_CV_EN.pdf';
+    }
+
     if (currentSectionKey && currentSectionKey !== 'hakkimda') {
         showSection(currentSectionKey);
     }
@@ -221,8 +230,9 @@ function showSection(key) {
         scrollTo(els.hakkimda);
     } else {
         const section = sections[currentLang][key];
-        els.projectYear.textContent = section.year;
-        els.projectContent.innerHTML = `<h2>${section.title}</h2><p>${section.description}</p>`;
+els.projectYear.textContent = section.year;
+document.getElementById('project-title').textContent = section.title;
+els.projectContent.innerHTML = `<p>${section.description}</p>`;
         els.projectDetail.classList.remove('hidden');
         document.querySelector('.blur-overlay').classList.add('active');
         requestAnimationFrame(() => {
