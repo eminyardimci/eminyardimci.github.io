@@ -267,15 +267,42 @@ function openGallery(images) {
     els.galleryCarousel.innerHTML = '';
     images.forEach(src => {
         const container = document.createElement('div');
+        container.style.textAlign = 'center';
+        container.style.margin = '15px 0';
+
         const img = document.createElement('img');
         img.src = src;
         img.alt = 'Proje görseli';
-        img.onclick = () => img.classList.toggle('zoomed');
+        img.style.cursor = 'zoom-in';
+        img.style.transition = 'all 0.5s ease';
+
+        img.onclick = (e) => {
+            e.stopPropagation(); // Tıklama yayılmasını engelle
+
+            // Tüm resimleri küçült
+            document.querySelectorAll('#gallery-carousel img').forEach(i => {
+                i.classList.remove('zoomed');
+            });
+
+            // Tıklananı büyüt
+            img.classList.add('zoomed');
+        };
+
         container.appendChild(img);
         els.galleryCarousel.appendChild(container);
     });
+
     els.galleryModal.classList.remove('hidden');
     requestAnimationFrame(() => els.galleryModal.classList.add('visible'));
+
+    // Modal dışına tıklayınca tüm zoom'ları kapat
+    els.galleryModal.onclick = (e) => {
+        if (e.target === els.galleryModal) {
+            document.querySelectorAll('#gallery-carousel img').forEach(i => {
+                i.classList.remove('zoomed');
+            });
+        }
+    };
 }
 
 function closeGallery() {
