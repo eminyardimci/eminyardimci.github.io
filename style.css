@@ -287,12 +287,14 @@ body.dark-mode .images-button {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    max-width: 95vw;
-    max-height: 95vh;
+    transform: translate(-50%, -50%) scale(1.8);
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
     z-index: 10000;
-    box-shadow: 0 0 100px rgba(0,0,0,0.8);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
     border-radius: 20px;
+    cursor: zoom-out;
 }
 .projects-btn, .language-toggle, .dark-mode-toggle {
     padding: 0;
