@@ -35,7 +35,7 @@ body.dark-mode .contact-links a:hover {
 body.dark-mode .col h3 {
     color: #dc2626;
 }
-/* Blur Overlay – Yumuşak ve mobil dostu */
+/* Blur Overlay */
 .blur-overlay {
     position: fixed;
     inset: 0;
@@ -80,11 +80,27 @@ body.dark-mode .col h3 {
     text-transform: uppercase;
     font-weight: 500;
     display: block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.3s;
 }
-.sidebar a:hover,
+.sidebar a:hover {
+    background: rgba(255,255,255,0.1);
+}
 .sidebar a.active {
     font-weight: bold;
-    text-decoration: underline;
+    background: rgba(255,255,255,0.15);
+    position: relative;
+}
+.sidebar a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: white;
+    border-radius: 2px;
 }
 /* Content */
 .content {
@@ -109,13 +125,24 @@ body.dark-mode .col h3 {
     width: 300px;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 24px;
+    padding: 6px;
+    background: linear-gradient(45deg, #dc2626, #b91c1c);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.4s;
 }
 .photo img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 18px;
+}
+.photo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(220,38,38,0.3);
+}
+body.dark-mode .photo {
+    box-shadow: 0 0 30px rgba(220,38,38,0.4);
 }
 .columns {
     display: grid;
@@ -137,32 +164,23 @@ ul {
     padding-left: 20px;
     margin: 10px 0 30px;
 }
-/* Contact Links */
-.contact-links {
-    list-style: none;
-}
-.contact-links li {
-    margin-bottom: 12px;
-}
+/* Contact Links – Hover efekti */
 .contact-links a {
-    color: #1e293b;
-    text-decoration: none;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: color 0.3s;
+    transition: all 0.3s;
 }
 .contact-links a:hover {
     color: #dc2626;
+    transform: translateX(8px);
 }
-.contact-links i {
-    font-size: 20px;
-    width: 24px;
+.contact-links a:hover i {
+    transform: scale(1.2);
     color: #dc2626;
 }
-/* Project Section – Yıl tamamen içeride, taşma yok, orantılı fontlar */
-.project-section {
+.contact-links i {
+    transition: all 0.3s;
+}
+/* Project & Gallery Modals */
+.project-section, .gallery-section {
     max-width: 900px;
     width: 90%;
     max-height: 85vh;
@@ -180,11 +198,10 @@ ul {
     visibility: hidden;
     transition: opacity 0.6s ease, visibility 0.6s ease;
 }
-.project-section.visible {
+.project-section.visible, .gallery-section.visible {
     opacity: 1;
     visibility: visible;
 }
-/* Yıl – İçeride, taşmasız, orantılı ve dengeli font */
 .project-year {
     position: static;
     font-size: clamp(40px, 5vw, 65px);
@@ -193,8 +210,6 @@ ul {
     margin-bottom: 20px;
     line-height: 1;
     text-align: left;
-    background: transparent;
-    padding: 0;
 }
 .project-section h2 {
     font-size: clamp(36px, 5vw, 46px);
@@ -206,10 +221,7 @@ ul {
     line-height: 1.8;
     max-width: 900px;
 }
-/* Yeni Images Button – Yaratıcı ve görünür versiyon */
-.images-button {
-    display: block;
-    margin: 20px auto 10px;
+.images-button, .close-btn {
     padding: 10px 20px;
     background: #dc2626;
     color: white;
@@ -217,13 +229,9 @@ ul {
     border-radius: 30px;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s, transform 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
+    transition: all 0.3s;
 }
-.images-button:hover {
+.images-button:hover, .close-btn:hover {
     background: #b91c1c;
     transform: scale(1.05);
 }
@@ -233,29 +241,6 @@ body.dark-mode .images-button {
 }
 body.dark-mode .images-button:hover {
     background: #ffd633;
-}
-/* Gallery Section */
-.gallery-section {
-    max-width: 900px;
-    width: 90%;
-    max-height: 85vh;
-    padding: 60px 40px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow-y: auto;
-    z-index: 110;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-.gallery-section.visible {
-    opacity: 1;
-    visibility: visible;
 }
 #gallery-carousel {
     display: flex;
@@ -268,26 +253,15 @@ body.dark-mode .images-button:hover {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: zoom-in;
+    transition: transform 0.4s ease;
 }
-.close-btn {
-    padding: 12px 30px;
-    background: #dc2626;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    margin: 40px auto 0;
-    display: block;
-    font-size: 16px;
-    transition: background 0.3s;
+#gallery-carousel img.zoomed {
+    transform: scale(1.8);
+    z-index: 1000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
-.close-btn:hover {
-    background: #b91c1c;
-}
-.hidden {
-    display: none;
-}
-/* Buttons – Dil ve Dark Mode butonları aynı stil */
+/* Buttons */
 .projects-btn, .language-toggle, .dark-mode-toggle {
     padding: 0;
     background: #dc2626;
@@ -298,8 +272,7 @@ body.dark-mode .images-button:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
-.language-toggle,
-.dark-mode-toggle {
+.language-toggle, .dark-mode-toggle {
     width: 48px;
     height: 48px;
     display: flex;
@@ -308,9 +281,7 @@ body.dark-mode .images-button:hover {
     font-size: 20px;
     font-weight: bold;
 }
-.language-toggle:hover,
-.dark-mode-toggle:hover,
-.projects-btn:hover {
+.language-toggle:hover, .dark-mode-toggle:hover {
     background: #b91c1c;
     transform: scale(1.08);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -321,9 +292,15 @@ body.dark-mode .images-button:hover {
     bottom: 40px;
     width: 60px;
     height: 60px;
-    font-size: 24px;
+    font-size: 28px;
     display: none;
     z-index: 20;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(220,38,38,0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(220,38,38,0); }
+    100% { box-shadow: 0 0 0 0 rgba(220,38,38,0); }
 }
 .language-toggle {
     position: fixed;
@@ -341,7 +318,6 @@ body.dark-mode .images-button:hover {
     pointer-events: none;
     color: white;
 }
-/* Karanlık modda buton renkleri */
 body.dark-mode .language-toggle,
 body.dark-mode .dark-mode-toggle,
 body.dark-mode .projects-btn {
@@ -353,8 +329,7 @@ body.dark-mode .language-toggle {
 body.dark-mode .dark-mode-toggle i {
     color: #1e293b;
 }
-
-/* Responsive – Mobilde de taşmasız ve orantılı */
+/* Responsive */
 @media (max-width: 900px) {
     .blur-overlay {
         backdrop-filter: blur(8px);
@@ -385,19 +360,13 @@ body.dark-mode .dark-mode-toggle i {
     .projects-btn {
         display: block;
     }
-    .project-section {
-        width: 95%;
-        padding: 50px 20px;
-        max-height: 90vh;
-    }
-    .gallery-section {
+    .project-section, .gallery-section {
         width: 95%;
         padding: 50px 20px;
         max-height: 90vh;
     }
     .project-year {
         font-size: clamp(40px, 8vw, 60px);
-        margin-bottom: 15px;
     }
     .project-section h2 {
         font-size: clamp(30px, 7vw, 38px);
@@ -405,19 +374,14 @@ body.dark-mode .dark-mode-toggle i {
     .project-section p {
         font-size: clamp(15px, 4vw, 17px);
     }
-    .language-toggle,
-    .dark-mode-toggle {
+    .language-toggle, .dark-mode-toggle {
         width: 44px;
         height: 44px;
         font-size: 18px;
         top: 10px;
     }
-    .language-toggle {
-        right: 10px;
-    }
-    .dark-mode-toggle {
-        right: 70px; /* Dil butonundan biraz solda, çakışmasın */
-    }
+    .language-toggle { right: 10px; }
+    .dark-mode-toggle { right: 70px; }
     .images-button {
         font-size: 14px;
         padding: 8px 16px;
