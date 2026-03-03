@@ -209,7 +209,7 @@ img{display:block;max-width:100%;}
 
 .hl-name{
   font-family:var(--serif);
-  font-size:clamp(52px,7vw,100px);
+  font-size:clamp(38px,5vw,72px);
   font-weight:900;
   line-height:.9;letter-spacing:-2px;
   margin-bottom:14px;
@@ -349,6 +349,10 @@ img{display:block;max-width:100%;}
   transition:background .2s;
   position:relative;
 }
+.ex-info{display:flex;flex-direction:column;gap:2px;}
+.ex-sector{font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.5px;}
+.ex-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;}
+.ex-pos{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.5px;text-transform:uppercase;text-align:right;}
 .ex:last-child{border-bottom:none;}
 .ex:hover{background:rgba(245,158,11,.04);}
 .ex::before{
@@ -361,7 +365,7 @@ img{display:block;max-width:100%;}
   width:28px;text-align:right;
 }
 .ex-co{font-size:16px;font-weight:600;margin-bottom:2px;}
-.ex-role{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.5px;text-transform:uppercase;}
+
 .ex-pill{
   font-family:var(--mono);font-size:10px;font-weight:600;
   padding:4px 12px;border-radius:50px;
@@ -434,7 +438,11 @@ img{display:block;max-width:100%;}
   display:flex;flex-direction:column;justify-content:flex-end;
   padding:60px 70px;
   position:relative;overflow:hidden;
+  color:#fff !important;
 }
+.ph *{color:#fff !important;}
+.ph-back{color:rgba(255,255,255,.55) !important;}
+.ph-back:hover{color:#fff !important;}
 .ph-bg{position:absolute;inset:0;transition:background .4s;}
 
 /* animated diagonal lines */
@@ -492,7 +500,7 @@ img{display:block;max-width:100%;}
 .pb-desc{font-size:17px;line-height:1.9;color:var(--ink2);font-weight:300;}
 .pb-desc strong{color:var(--ink);font-weight:700;}
 
-.pb-side{padding:44px 28px;}
+.pb-side{padding:44px 28px;background:var(--bg);}
 .ps-h{font-family:var(--mono);font-size:9px;color:var(--ink3);text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:10px;margin-top:24px;}
 .ps-h:first-child{margin-top:0;}
 .ps-yr{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);margin-bottom:0;}
@@ -657,11 +665,11 @@ footer{
         <em>Yardımcı</em>
       </h1>
       <p class="hl-sub" id="hl-sub">// Elektronik · Gömülü Sistemler · Otomasyon</p>
-      <p class="hl-desc" data-tr="Elektronik kart tasarımı, gömülü sistem yazılımı ve otomasyon teknolojilerinde deneyimli; takım çalışmasına yatkın ve yenilikçi çözümler üretmeye odaklı bir mekatronik mühendisiyim." data-en="Experienced in electronic board design, embedded software, and automation — a mechatronics engineer passionate about teamwork and innovative engineering.">
-        Elektronik kart tasarımı, gömülü sistem yazılımı ve otomasyon teknolojilerinde deneyimli; takım çalışmasına yatkın ve yenilikçi çözümler üretmeye odaklı bir mekatronik mühendisiyim.
+      <p class="hl-desc" data-tr="Savunma sanayii, endüstriyel otomasyon ve robot sistemleri alanlarında proje deneyimine sahip; elektronik kart tasarımı ve gömülü sistem yazılımı konularında uzmanlaşmış, mühendislik problemlerini sahada ve laboratuvarda çözmeye odaklı bir mekatronik mühendisiyim." data-en="A mechatronics engineer with hands-on project experience in defence industry, industrial automation and robotic systems — specialising in electronic board design and embedded software, equally at home in the lab and in the field.">
+        Savunma sanayii, endüstriyel otomasyon ve robot sistemleri alanlarında proje deneyimine sahip; elektronik kart tasarımı ve gömülü sistem yazılımı konularında uzmanlaşmış, mühendislik problemlerini sahada ve laboratuvarda çözmeye odaklı bir mekatronik mühendisiyim.
       </p>
       <div class="hl-cta">
-        <a href="mailto:emin.yardimciii&#64;gmail.com" class="cta-main">
+        <a href="mailto:emin.yardimciii@gmail.com" class="cta-main">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <span data-tr="İletişime Geç" data-en="Get in Touch">İletişime Geç</span>
         </a>
@@ -676,11 +684,11 @@ footer{
       <div class="av-ring">⚙️</div>
       <div>
         <div class="pn">Mehmet Emin Yardımcı</div>
-        <div class="pt" data-tr="Mekatronik Mühendisi · HAN Savunma" data-en="Mechatronics Engineer · HAN Defence">Mekatronik Mühendisi · HAN Savunma</div>
+        <div class="pt" data-tr="Mekatronik Mühendisi" data-en="Mechatronics Engineer">Mekatronik Mühendisi</div>
       </div>
       <div class="sep"></div>
       <div>
-        <a href="mailto:emin.yardimciii&#64;gmail.com" class="info-item" style="text-decoration:none">
+        <a href="mailto:emin.yardimciii@gmail.com" class="info-item" style="text-decoration:none">
           <div class="ii-ico">
             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
@@ -735,14 +743,87 @@ footer{
     <span class="sec-tag">02 — <span data-tr="Deneyim" data-en="Experience">Deneyim</span></span>
     <h2 class="sec-h" data-tr="Çalışma Geçmişi" data-en="Work History">Çalışma Geçmişi</h2>
     <div class="ex-list">
-      <div class="ex"><span class="ex-num">01</span><div><div class="ex-co">HAN Savunma Sanayi</div><div class="ex-role" data-tr="Ar-Ge Mühendisi" data-en="R&D Engineer">Ar-Ge Mühendisi</div></div><span class="ex-pill live" data-tr="● Halen" data-en="● Current">● Halen</span></div>
-      <div class="ex"><span class="ex-num">02</span><div><div class="ex-co">T3 Vakfı – Deneyap</div><div class="ex-role" data-tr="Eğitmen" data-en="Instructor">Eğitmen</div></div><span class="ex-pill" data-tr="Eğitim" data-en="Education">Eğitim</span></div>
-      <div class="ex"><span class="ex-num">03</span><div><div class="ex-co">Sonel Yazılım</div><div class="ex-role" data-tr="Ar-Ge Mühendisi" data-en="R&D Engineer">Ar-Ge Mühendisi</div></div><span class="ex-pill" data-tr="Yazılım" data-en="Software">Yazılım</span></div>
-      <div class="ex"><span class="ex-num">04</span><div><div class="ex-co">Orbiba Robotics</div><div class="ex-role" data-tr="Stajyer" data-en="Intern">Stajyer</div></div><span class="ex-pill" data-tr="Staj" data-en="Internship">Staj</span></div>
-      <div class="ex"><span class="ex-num">05</span><div><div class="ex-co">Sunny Elektronik</div><div class="ex-role" data-tr="Stajyer" data-en="Intern">Stajyer</div></div><span class="ex-pill" data-tr="Staj" data-en="Internship">Staj</span></div>
-      <div class="ex"><span class="ex-num">06</span><div><div class="ex-co">Pektam Pano</div><div class="ex-role" data-tr="Stajyer" data-en="Intern">Stajyer</div></div><span class="ex-pill" data-tr="Staj" data-en="Internship">Staj</span></div>
-      <div class="ex"><span class="ex-num">07</span><div><div class="ex-co">Petkom Yazılım</div><div class="ex-role" data-tr="Stajyer" data-en="Intern">Stajyer</div></div><span class="ex-pill" data-tr="Staj" data-en="Internship">Staj</span></div>
-      <div class="ex"><span class="ex-num">08</span><div><div class="ex-co">Mavili Elektronik</div><div class="ex-role" data-tr="Stajyer" data-en="Intern">Stajyer</div></div><span class="ex-pill" data-tr="Staj" data-en="Internship">Staj</span></div>
+      <div class="ex">
+        <span class="ex-num">01</span>
+        <div class="ex-info">
+          <div class="ex-co">HAN Savunma Sanayi</div>
+          <div class="ex-sector" data-tr="Savunma Sanayii" data-en="Defence Industry">Savunma Sanayii</div>
+        </div>
+        <div class="ex-right">
+          <span class="ex-pos" data-tr="Ar-Ge Mühendisi" data-en="R&D Engineer">Ar-Ge Mühendisi</span>
+          <span class="ex-pill live" data-tr="● Halen" data-en="● Current">● Halen</span>
+        </div>
+      </div>
+      <div class="ex">
+        <span class="ex-num">02</span>
+        <div class="ex-info">
+          <div class="ex-co">T3 Vakfı – Deneyap</div>
+          <div class="ex-sector" data-tr="Eğitim Vakfı" data-en="Education Foundation">Eğitim Vakfı</div>
+        </div>
+        <div class="ex-right">
+          <span class="ex-pos" data-tr="Eğitmen" data-en="Instructor">Eğitmen</span>
+        </div>
+      </div>
+      <div class="ex">
+        <span class="ex-num">03</span>
+        <div class="ex-info">
+          <div class="ex-co">Sonel Yazılım</div>
+          <div class="ex-sector" data-tr="Robotik Otomasyon" data-en="Robotic Automation">Robotik Otomasyon</div>
+        </div>
+        <div class="ex-right">
+          <span class="ex-pos" data-tr="Ar-Ge Mühendisi" data-en="R&D Engineer">Ar-Ge Mühendisi</span>
+        </div>
+      </div>
+      <div class="ex">
+        <span class="ex-num">04</span>
+        <div class="ex-info">
+          <div class="ex-co">Orbiba Robotics</div>
+          <div class="ex-sector" data-tr="Otonom Robot Teknolojisi" data-en="Autonomous Robotics">Otonom Robot Teknolojisi</div>
+        </div>
+        <div class="ex-right">
+          <span class="ex-pos" data-tr="Ar-Ge Stajyeri" data-en="R&D Intern">Ar-Ge Stajyeri</span>
+        </div>
+      </div>
+      <div class="ex">
+        <span class="ex-num">05</span>
+        <div class="ex-info">
+          <div class="ex-co">Sunny Elektronik</div>
+          <div class="ex-sector" data-tr="Beyaz Eşya &amp; Ev Aletleri" data-en="Home Appliances">Beyaz Eşya &amp; Ev Aletleri</div>
+        </div>
+        <div class="ex-right">
+          <span class="ex-pos" data-tr="Ür-Ge Stajyeri" data-en="R&D Intern">Ür-Ge Stajyeri</span>
+        </div>
+      </div>
+      <div class="ex">
+        <span class="ex-num">06</span>
+        <div class="ex-info">
+          <div class="ex-co">Pektam Pano</div>
+          <div class="ex-sector" data-tr="Elektrik &amp; Otomasyon Panoları" data-en="Electrical &amp; Automation Panels">Elektrik &amp; Otomasyon Panoları</div>
+        </div>
+        <div class="ex-right">
+          <span class="ex-pos" data-tr="Montaj Stajyeri" data-en="Assembly Intern">Montaj Stajyeri</span>
+        </div>
+      </div>
+      <div class="ex">
+        <span class="ex-num">07</span>
+        <div class="ex-info">
+          <div class="ex-co">Petkom Yazılım</div>
+          <div class="ex-sector" data-tr="Yazarkasa &amp; Akıllı POS" data-en="POS &amp; Smart Devices">Yazarkasa &amp; Akıllı POS</div>
+        </div>
+        <div class="ex-right">
+          <span class="ex-pos" data-tr="Teknik Servis Stajyeri" data-en="Technical Service Intern">Teknik Servis Stajyeri</span>
+        </div>
+      </div>
+      <div class="ex">
+        <span class="ex-num">08</span>
+        <div class="ex-info">
+          <div class="ex-co">Mavili Elektronik</div>
+          <div class="ex-sector" data-tr="Yangın Sistemleri" data-en="Fire Safety Systems">Yangın Sistemleri</div>
+        </div>
+        <div class="ex-right">
+          <span class="ex-pos" data-tr="Arıza &amp; Devreye Alım Stajyeri" data-en="Commissioning Intern">Arıza &amp; Devreye Alım Stajyeri</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -765,7 +846,7 @@ footer{
     <h2 class="sec-h" data-tr="Bana Ulaşın" data-en="Get In Touch">Bana Ulaşın</h2>
     <div class="ct-grid">
       <div class="ct-links">
-        <a href="mailto:emin.yardimciii&#64;gmail.com" class="ct-a">
+        <a href="mailto:emin.yardimciii@gmail.com" class="ct-a">
           <div class="ct-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <div><span class="ct-lbl" data-tr="E-posta" data-en="Email">E-posta</span><span class="ct-val">emin.yardimciii&#64;gmail.com</span></div>
         </a>
@@ -835,7 +916,7 @@ footer{
 
       <button class="gallery-btn" id="gal-btn" onclick="openGal()">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span data-tr="Görselleri Gör" data-en="View Images">Görselleri Gör</span>
+        <span data-tr="Görselleri Gör" data-en="View Images" id="gal-btn-lbl">Görselleri Gör</span>
       </button>
     </div>
   </div>
@@ -981,14 +1062,17 @@ function toggleTheme(){
 function toggleLang(){
   lang=lang==='tr'?'en':'tr';
   document.getElementById('lBtn').textContent=lang==='tr'?'EN':'TR';
-  document.querySelectorAll('[data-tr]').forEach(el=>{
-    const v=el.getAttribute('data-'+lang);
-    if(v) el.textContent=v;
-  });
+  applyLang();
   document.getElementById('hl-sub').textContent=lang==='tr'
     ?'// Elektronik · Gömülü Sistemler · Otomasyon'
     :'// Electronics · Embedded Systems · Automation';
   if(curProj) renderProj(curProj);
+}
+function applyLang(){
+  document.querySelectorAll('[data-tr]').forEach(el=>{
+    const v=el.getAttribute('data-'+lang);
+    if(v!==null) el.textContent=v;
+  });
 }
 
 /* ── NAV ──────────────────────────────────── */
@@ -1005,6 +1089,7 @@ function goHome(){
   setActive('home');
   window.scrollTo({top:0,behavior:'smooth'});
   if(window.innerWidth<=960) document.getElementById('side').classList.remove('open');
+  document.querySelectorAll('.bar-a').forEach((a,i)=>a.classList.toggle('on',i===0));
 }
 
 function goProj(k){
@@ -1023,6 +1108,11 @@ function scrollToSec(id){
     const el=document.getElementById(id);
     if(el) el.scrollIntoView({behavior:'smooth'});
   },120);
+  // Mark correct nav link active
+  document.querySelectorAll('.bar-a').forEach(a=>a.classList.remove('on'));
+  const map={'sec-sk':1,'sec-ex':2,'sec-ct':3};
+  const idx=map[id];
+  if(idx) document.querySelectorAll('.bar-a')[idx]?.classList.add('on');
 }
 
 /* ── RENDER PROJECT ───────────────────────── */
@@ -1097,6 +1187,23 @@ function stagger(sel,d=.06){
   });
 }
 stagger('.sk',.06);stagger('.ex',.05);stagger('.ce',.07);stagger('.stat',.1);
+
+// Scroll spy for topbar active state
+const spySections=[
+  {id:'sec-sk',barIdx:1},
+  {id:'sec-ex',barIdx:2},
+  {id:'sec-ct',barIdx:3}
+];
+const barAs=document.querySelectorAll('.bar-a');
+window.addEventListener('scroll',()=>{
+  if(curProj) return;
+  let active=0;
+  spySections.forEach(({id,barIdx})=>{
+    const el=document.getElementById(id);
+    if(el && el.getBoundingClientRect().top < window.innerHeight*0.6) active=barIdx;
+  });
+  barAs.forEach((a,i)=>a.classList.toggle('on',i===active));
+},{passive:true});
 </script>
 </body>
 </html>
