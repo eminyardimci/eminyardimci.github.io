@@ -431,24 +431,43 @@ img{display:block;max-width:100%;}
 }
 
 /* ─── PROJECT PAGE ───────────────────────────────── */
-#pg-proj{display:none;min-height:calc(100vh - 58px);}
+#pg-proj{
+  display:none;
+  min-height:calc(100vh - 58px);
+  background:var(--bg);
+}
 
 .ph{
   min-height:52vh;
   display:flex;flex-direction:column;justify-content:flex-end;
   padding:60px 70px;
   position:relative;overflow:hidden;
-  background:#0C0C0F;
+  /* Hardcoded — never changes with theme */
+  background:#0a0a0d !important;
+  color-scheme: dark;
+  isolation: isolate;
 }
-/* Always white text in hero regardless of theme */
-.ph,.ph h1,.ph p,.ph span,.ph div,.ph button{color:#fff !important;}
-.ph-back{color:rgba(255,255,255,.5) !important;}
-.ph-back:hover{color:#fff !important;}
-/* ph-bg carries the per-project gradient on top of the dark base */
-.ph-bg{position:absolute;inset:0;transition:background .4s;z-index:0;}
-.ph-lines,.ph-year{z-index:1;}
-.ph > div:not(.ph-bg):not(.ph-lines){position:relative;z-index:2;}
-[data-theme="light"] .ph{background:#0C0C0F !important;}
+/* Lock all text to white inside ph */
+.ph *{color:#fff !important;}
+.ph-back{opacity:.6;}
+.ph-back:hover{opacity:1;}
+/* Gradient overlay sits above the dark base */
+.ph-bg{
+  position:absolute;inset:0;
+  transition:background .4s;
+  z-index:1;
+}
+/* Diagonal lines and year above bg */
+.ph-lines{z-index:2;}
+.ph-year{z-index:2;}
+/* Content always on top */
+.ph > div:last-child{position:relative;z-index:3;}
+/* Belt-and-suspenders: force dark in light mode too */
+[data-theme="light"] .ph,
+[data-theme="light"] .ph-bg + *,
+[data-theme="light"] #ph{
+  background:#0a0a0d !important;
+}
 
 /* animated diagonal lines */
 .ph-lines{
@@ -1125,6 +1144,8 @@ function renderProj(k){
   const p=P[k], d=p[lang];
   const ph=document.getElementById('ph');
   document.getElementById('ph-bg').style.background=p.bg;
+  // Force ph itself always dark regardless of theme
+  document.getElementById('ph').style.background='#0a0a0d';
   ph.style.setProperty('--acc',p.accent);
   document.getElementById('ph-year').textContent=d.yr.split('–')[0].replace(/\s/g,'').substring(0,4);
   document.getElementById('ph-num').textContent=p.num;
