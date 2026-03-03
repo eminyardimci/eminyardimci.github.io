@@ -2,6 +2,7 @@
 <html lang="tr" data-theme="dark">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mehmet Emin Yardımcı</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -605,9 +606,9 @@ footer{
   <div class="bar-logo" onclick="goHome()">Mehmet Emin</div>
   <nav class="bar-nav">
     <button class="bar-a on" onclick="goHome()" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</button>
-    <button class="bar-a" onclick="scrollTo('sec-sk')" data-tr="Beceriler" data-en="Skills">Beceriler</button>
-    <button class="bar-a" onclick="scrollTo('sec-ex')" data-tr="Deneyim" data-en="Experience">Deneyim</button>
-    <button class="bar-a" onclick="scrollTo('sec-ct')" data-tr="İletişim" data-en="Contact">İletişim</button>
+    <button class="bar-a" onclick="scrollToSec('sec-sk')" data-tr="Beceriler" data-en="Skills">Beceriler</button>
+    <button class="bar-a" onclick="scrollToSec('sec-ex')" data-tr="Deneyim" data-en="Experience">Deneyim</button>
+    <button class="bar-a" onclick="scrollToSec('sec-ct')" data-tr="İletişim" data-en="Contact">İletişim</button>
   </nav>
   <div class="bar-r">
     <button class="bar-btn" id="lBtn" onclick="toggleLang()">EN</button>
@@ -660,7 +661,7 @@ footer{
         Elektronik kart tasarımı, gömülü sistem yazılımı ve otomasyon teknolojilerinde deneyimli; takım çalışmasına yatkın ve yenilikçi çözümler üretmeye odaklı bir mekatronik mühendisiyim.
       </p>
       <div class="hl-cta">
-        <a href="mailto:emin.yardimciii@gmail.com" class="cta-main">
+        <a href="mailto:emin.yardimciii&#64;gmail.com" class="cta-main">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <span data-tr="İletişime Geç" data-en="Get in Touch">İletişime Geç</span>
         </a>
@@ -679,11 +680,11 @@ footer{
       </div>
       <div class="sep"></div>
       <div>
-        <a href="mailto:emin.yardimciii@gmail.com" class="info-item" style="text-decoration:none">
+        <a href="mailto:emin.yardimciii&#64;gmail.com" class="info-item" style="text-decoration:none">
           <div class="ii-ico">
             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <span class="ii-txt">emin.yardimciii@gmail.com</span>
+          <span class="ii-txt">emin.yardimciii&#64;gmail.com</span>
         </a>
         <a href="https://www.linkedin.com/in/eminyardimci" target="_blank" class="info-item" style="text-decoration:none">
           <div class="ii-ico">
@@ -764,9 +765,9 @@ footer{
     <h2 class="sec-h" data-tr="Bana Ulaşın" data-en="Get In Touch">Bana Ulaşın</h2>
     <div class="ct-grid">
       <div class="ct-links">
-        <a href="mailto:emin.yardimciii@gmail.com" class="ct-a">
+        <a href="mailto:emin.yardimciii&#64;gmail.com" class="ct-a">
           <div class="ct-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><span class="ct-lbl" data-tr="E-posta" data-en="Email">E-posta</span><span class="ct-val">emin.yardimciii@gmail.com</span></div>
+          <div><span class="ct-lbl" data-tr="E-posta" data-en="Email">E-posta</span><span class="ct-val">emin.yardimciii&#64;gmail.com</span></div>
         </a>
         <a href="https://www.linkedin.com/in/eminyardimci" target="_blank" class="ct-a">
           <div class="ct-ico"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
@@ -1016,7 +1017,7 @@ function goProj(k){
   if(window.innerWidth<=960) document.getElementById('side').classList.remove('open');
 }
 
-function scrollTo(id){
+function scrollToSec(id){
   goHome();
   setTimeout(()=>{
     const el=document.getElementById(id);
